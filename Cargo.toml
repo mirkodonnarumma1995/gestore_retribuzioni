@@ -2,6 +2,7 @@
 name = "slint-rust-template"
 version = "0.1.0"
 edition = "2021"
+description = "Programma che divide lo stipendio mensile seguendo lo schema 50, 30, 20, impostato su 50 per le spese importanti, 30 per lo svago e 20 per il risparmio."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,3 +11,7 @@ slint = "1.8.0"
 
 [build-dependencies]
 slint-build = "1.8.0"
+
+[package-metadata-bundle]
+name = "Gestore retribuzione"
+identifier = "io.github.mirkodonnarumma1995.gestore_retribuzioni"

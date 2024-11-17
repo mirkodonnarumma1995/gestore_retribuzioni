@@ -1,17 +1,51 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, VerticalBox, LineEdit } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
-    in-out property <int> counter: 42;
-    callback request-increase-value();
-    VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
-        }
 
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
+    in property <string> risultato: "";
+    callback dividi-somma(string);
+
+    background: #313e50;
+    GridLayout {
+        padding: 50px;
+        spacing: 25px;
+        Row {
+            Text {
+                text: "Inserisci la somma";
+                horizontal-alignment: center;
+                font-size: 24px;
+                font-weight: 900;
+                height: 35px;
+                color: white;
+            }
+        }
+        Row {
+            somma := LineEdit {
+                horizontal-alignment: center;
+                font-size: 16px;
+                height: 35px;
+            }
+        }
+        Row {
+            Button {
+                text: "Calcola";
+                primary: true;
+                height: 35px;
+                clicked => {dividi_somma(somma.text)}
+            }
+        }
+        Row {
+            VerticalBox {
+                Rectangle {
+                    height: 100px;
+                    background: #f2f2f2;
+                    Text {
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 500;
+                        text: root.risultato;
+                    }
+                }
             }
         }
     }
